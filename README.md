@@ -42,23 +42,6 @@ Install Node.js 20.19+ and PostgreSQL 18. The application uses the existing `swe
 
 4. Open `http://localhost:5173`.
 
-## Start the full app with Docker
-
-Docker Compose starts PostgreSQL, the API, and the production frontend. From the project root:
-
-```powershell
-Copy-Item .env.example .env
-# Edit .env and replace DB_PASSWORD and JWT_SECRET with private values.
-docker compose up --build -d
-docker compose ps
-```
-
-Open `http://localhost:8080`. A new PostgreSQL volume is initialized with the app's existing `users` and `health_records` structure, and the existing additive migration runs when the backend starts. PostgreSQL data persists in the `postgres_data` volume. Stop the services with `docker compose down`; this keeps the database volume. Do not commit `.env`.
-
-The frontend talks to the API at `http://localhost:5000/api`. Change `BACKEND_PORT` in `.env` if port 5000 is already in use.
-
-The backend defaults to `http://localhost:5000/api`. Set `VITE_API_URL` in `frontend/.env` only if the API uses a different URL. Placeholder values for the environment are in each folder’s `.env.example`.
-
 ## Database migration and seed
 
 The verified database has only `users` and `health_records`; the table already has a foreign key, slot check, and unique `(user_id, reading_date, time_slot)` index. The additive migration validates integer glucose values from 40 through 600 mg/dl. It never drops tables or changes existing rows. Run it with `npm run db:migrate` from `backend/`.
