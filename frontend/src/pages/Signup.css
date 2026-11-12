@@ -1,0 +1,42 @@
+/* Additional layout styles for account signup. */
+
+.signup-page {
+  padding-top: 34px;
+  padding-bottom: 34px;
+}
+
+.signup-page .auth-card {
+  width: min(100%, 480px);
+}
+
+.signup-page .auth-brand {
+  margin-bottom: 25px;
+}
+
+.signup-page .auth-form {
+  gap: 7px;
+}
+
+.signup-page .auth-form label {
+  margin-top: 5px;
+}
+
+.field-error {
+  color: var(--danger);
+  font-size: 12px;
+}
+
+.signup-page .auth-submit {
+  margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+  .signup-page {
+    padding: 16px 10px;
+  }
+
+  .signup-page .auth-card {
+    padding: 24px 18px;
+  }
+
+}

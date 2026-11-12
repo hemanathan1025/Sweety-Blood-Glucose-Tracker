@@ -1,0 +1,74 @@
+/* Styles for success and error notifications. */
+
+.toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 80;
+  max-width: min(420px, calc(100vw - 32px));
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px 15px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 12px 36px rgba(15,23,42,.16);
+  color: var(--text);
+  font-size: 13px;
+  animation: toast-in .24s ease-out;
+}
+
+.toast-success {
+  border-color: #bbf7d0;
+}
+
+.toast-error {
+  border-color: #fecaca;
+}
+
+.toast-mark {
+  width: 24px;
+  height: 24px;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #dcfce7;
+  color: #15803d;
+  font-weight: 800;
+}
+
+.toast-error .toast-mark {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.toast button {
+  margin-left: auto;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 20px;
+}
+
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@media (max-width: 480px) {
+  .toast {
+    right: 12px;
+    bottom: 12px;
+  }
+
+}

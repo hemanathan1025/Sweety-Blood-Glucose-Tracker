@@ -1,0 +1,142 @@
+/* Styles for the add and edit reading dialog. */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(15,23,42,.48);
+  animation: backdrop-in .18s ease-out;
+}
+
+.reading-modal {
+  width: min(100%, 480px);
+  max-height: min(92vh, 760px);
+  overflow-y: auto;
+  padding: 26px;
+  border: 1px solid rgba(255,255,255,.7);
+  border-radius: 22px;
+  background: var(--card);
+  box-shadow: 0 24px 70px rgba(15,23,42,.25);
+  animation: modal-in .2s ease-out;
+}
+
+.modal-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.modal-heading h2 {
+  margin: 5px 0 0;
+  font-size: 23px;
+}
+
+.icon-button {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: #fff;
+  color: var(--muted);
+  font-size: 23px;
+  line-height: 1;
+}
+
+.reading-modal .form-stack {
+  display: grid;
+  gap: 9px;
+}
+
+.reading-modal .form-stack label {
+  margin-top: 6px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.reading-modal .form-stack label span {
+  color: var(--muted);
+  font-weight: 450;
+}
+
+.reading-modal input, .reading-modal select {
+  width: 100%;
+  min-height: 45px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: #fff;
+  color: var(--text);
+  font: inherit;
+  outline: none;
+}
+
+.reading-modal input:focus, .reading-modal select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(13,148,136,.12);
+}
+
+.field-error {
+  color: var(--danger);
+  font-size: 12px;
+}
+
+.form-api-error {
+  padding: 11px 12px;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 13px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.modal-actions .button-primary {
+  flex: 1;
+}
+
+@keyframes backdrop-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(9px) scale(.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+}
+
+@media (max-width: 480px) {
+  .modal-backdrop {
+    align-items: end;
+    padding: 8px;
+  }
+
+  .reading-modal {
+    width: 100%;
+    max-height: 94vh;
+    padding: 22px 18px;
+    border-radius: 20px 20px 14px 14px;
+  }
+
+}

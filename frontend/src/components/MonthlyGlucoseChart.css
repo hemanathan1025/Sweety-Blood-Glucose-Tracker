@@ -1,0 +1,117 @@
+/* Keep the chart card consistent with the other health panels. */
+
+.monthly-chart-card {
+  margin-top: 16px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.monthly-chart-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.monthly-chart-heading h3 {
+  margin: 0 0 5px;
+  color: var(--text);
+  font-size: 16px;
+}
+
+.monthly-chart-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.monthly-chart-unit {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.monthly-chart-plot {
+  width: 100%;
+  height: 320px;
+}
+
+.monthly-chart-message {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+}
+
+.monthly-chart-empty {
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.monthly-chart-empty svg {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 4px;
+  color: var(--primary);
+}
+
+.monthly-chart-empty strong {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.monthly-chart-empty span {
+  font-size: 13px;
+}
+
+.monthly-chart-tooltip {
+  display: grid;
+  gap: 5px;
+  padding: 11px 13px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  color: var(--text);
+  font-size: 12px;
+}
+
+.monthly-chart-tooltip span {
+  color: var(--muted);
+}
+
+.monthly-chart-tooltip b {
+  color: var(--primary);
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .monthly-chart-plot {
+    height: 285px;
+  }
+}
+
+@media (max-width: 480px) {
+  .monthly-chart-card {
+    padding: 15px;
+  }
+
+  .monthly-chart-heading {
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .monthly-chart-plot {
+    height: 245px;
+  }
+}

@@ -1,0 +1,97 @@
+/* Styles for report ranges and summary values. */
+
+.report-card {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.report-date-range {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 16px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.report-calendar-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.report-calendar-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.report-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.report-stat {
+  min-width: 0;
+  padding: 16px;
+  border-radius: 13px;
+  background: #f8fafc;
+}
+
+.report-stat span {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.report-stat strong {
+  display: block;
+  overflow-wrap: anywhere;
+  color: var(--text);
+  font-size: clamp(16px, 2vw, 21px);
+  font-weight: 700;
+}
+
+.stat-high strong {
+  color: #b45309;
+}
+
+.stat-low strong {
+  color: var(--primary);
+}
+
+.stat-average strong {
+  color: #4338ca;
+}
+
+/* Use two columns on tablets so the numbers stay easy to scan. */
+@media (max-width: 768px) {
+  .report-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 480px) {
+  .report-card {
+    padding: 15px;
+  }
+
+  .report-stats {
+    gap: 9px;
+  }
+
+  .report-stat {
+    padding: 13px;
+  }
+
+}

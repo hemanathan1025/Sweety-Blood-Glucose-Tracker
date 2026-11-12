@@ -1,0 +1,121 @@
+
+/* Main navbar */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+}
+
+.navbar-inner {
+  width: min(1180px, calc(100% - 40px));
+  min-height: 72px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+/* Brand */
+
+.brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: var(--primary);
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.brand-copy {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.brand-copy small {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Navigation */
+
+.navbar-account {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-left: auto;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.navbar-links a {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.navbar-links a:hover,
+.navbar-links a.active {
+  color: var(--primary);
+}
+
+/* Mobile profile avatar */
+
+.navbar-mobile-profile {
+  display: none;
+}
+
+/* Mobile responsive */
+
+@media (max-width: 480px) {
+  .navbar-inner {
+    width: calc(100% - 28px);
+    min-height: 64px;
+    gap: 12px;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-account {
+    gap: 10px;
+  }
+
+  .navbar-mobile-profile {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #99f6e4;
+    border-radius: 50%;
+    background: #ccfbf1;
+    color: #0f766e;
+    font-size: 12px;
+    font-weight: 750;
+    text-decoration: none;
+  }
+}
